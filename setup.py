@@ -19,6 +19,7 @@ setup(
     author_email='alister@cordiner.net',
     url='https://github.com/acordiner/scrapy-dynamodb',
     install_requires=get_requirements('requirements.txt'),
+    py_modules=['scrapy_dynamodb'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Console',
