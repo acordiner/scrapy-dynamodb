@@ -1,9 +1,14 @@
 language: python
 python:
-  - "2.7"
-  - "3.5"
-  - "3.6"
+- '2.7'
+- '3.5'
+- '3.6'
 install:
-  - pip install pylint
-  - pip install -r requirements.txt
+- pip install pylint
+- pip install -r requirements.txt
 script: pylint --errors-only scrapy_dynamodb.py
+deploy:
+  provider: pypi
+  user: acordiner
+  password:
+    secure: u3oPO3WIO2HTbFJs9cYEnsuOss/7jJtqyaPitcEiEui4cHBZvpsUA0SCc8iVN94k25ze+Nw6h6ser9ZfkTiMllO+gmUUumoBPuorDS6N3ChQqUQBO3Rr+AKcZXRTqVZ66v4pxWsY5B8i4cJrI/dYWGYzZ373FG1Xp8bQ+L/I9hZlKVuMm0M1MiJTrHYXJRjwctz3UYhqVHs/LMq3T9717k8xnPivXOYDYVw4EtFb3nPjQChtkewbcSQwLT0CwjngBgaG6fGFmR7jg1ECQfNxZJ2CnchFPAwVfmyAgaMRR0FS3n57/mFjhh5AjlFcjhgjsebIFDL1inSpb6CsSHzYSMfLh0WXTwDsK+Q7ouVhRje5qaU9h0M+Jq8jamNullMSiMagMm6aJH+Vch+IxevDrzLVUoSKhv27mC8cHPIHIs6uMS6Sk4OaTQqyDgtCtz7cw8EbsIZeUXywY8aPFWrmV5FS8xOrAhPQ7GT25ZHuLdWjOmIT8+gDu4FDq5k2LhcsximlEV95WdciHZJKkNQaO4vEjZ8He0M1AcZ0uJug5OkGklRQ8KeJ41wEebRmnamnvFWHVfxJJbWBIbQmzmRpS2I0vFFIoyrXzg0bbSv8qYSv3mxlyrf2ublgt3wwM/L7YwPVYyaJWSsbNR/dFr+rIn4UcD14TGc1Ws8H7pRqHX8=
