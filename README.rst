@@ -36,6 +36,12 @@ Using the development version
 You can clone the git repository by doing the following::
 
     $ git clone git://github.com/acordiner/scrapy-dynamodb.git
+    
+Setup
+=====================
+In ``pipelines.py`` add import statement::   
+
+    from scrapy_dynamodb import DynamoDbPipeline
 
 Using scrapy-dynamodb
 =====================
@@ -45,6 +51,7 @@ the following line to your ``settings.py``::
 
     ITEM_PIPELINES = {
         'scraper.pipelines.DynamoDbPipeline': 1,
+        # replace scraper with your scrapy project name
     }
 
     AWS_ACCESS_KEY_ID = '<aws access key id>'
