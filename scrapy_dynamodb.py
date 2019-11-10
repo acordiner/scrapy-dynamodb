@@ -44,7 +44,7 @@ class DynamoDbPipeline(object):
             aws_secret_access_key=self.aws_secret_access_key,
             region_name=self.region_name,
         )
-        self.table = db.Table(self.table_name)
+        self.table = db.Table(self.table_name)  # pylint: disable=no-member
 
     def close_spider(self, spider):
         self.table = None
