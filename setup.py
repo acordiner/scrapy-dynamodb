@@ -13,7 +13,7 @@ def get_requirements(filename):
 
 setup(
     name='scrapy-dynamodb',
-    version='0.2',
+    version='0.2.1',
     description='AWS DynamoDB pipeline for Scrapy',
     author='Alister Cordiner',
     author_email='alister@cordiner.net',
