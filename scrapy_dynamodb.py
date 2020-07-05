@@ -16,11 +16,12 @@ def default_encoder(value):
 class DynamoDbPipeline(object):
 
     def __init__(self, aws_access_key_id, aws_secret_access_key, region_name,
-                 table_name, encoder=default_encoder):
+                 table_name, endpoint_url, encoder=default_encoder):
         self.aws_access_key_id = aws_access_key_id
         self.aws_secret_access_key = aws_secret_access_key
         self.region_name = region_name
         self.table_name = table_name
+        self.endpoint_url = endpoint_url
         self.encoder = encoder
         self.table = None
 
@@ -30,11 +31,13 @@ class DynamoDbPipeline(object):
         aws_secret_access_key = crawler.settings['AWS_SECRET_ACCESS_KEY']
         region_name = crawler.settings['DYNAMODB_PIPELINE_REGION_NAME']
         table_name = crawler.settings['DYNAMODB_PIPELINE_TABLE_NAME']
+        endpoint_url = crawler.settings['DYNAMODB_ENDPOINT_URL']
         return cls(
             aws_access_key_id=aws_access_key_id,
             aws_secret_access_key=aws_secret_access_key,
             region_name=region_name,
-            table_name=table_name
+            table_name=table_name,
+            endpoint_url=endpoint_url
         )
 
     def open_spider(self, spider):
@@ -43,6 +46,7 @@ class DynamoDbPipeline(object):
             aws_access_key_id=self.aws_access_key_id,
             aws_secret_access_key=self.aws_secret_access_key,
             region_name=self.region_name,
+            endpoint_url=self.endpoint_url
         )
         self.table = db.Table(self.table_name)  # pylint: disable=no-member
 
