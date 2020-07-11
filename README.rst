@@ -58,6 +58,6 @@ the following line to your ``settings.py``::
     AWS_SECRET_ACCESS_KEY = '<aws secret access key>'
     DYNAMODB_PIPELINE_REGION_NAME = 'us-east-1'
     DYNAMODB_PIPELINE_TABLE_NAME = 'my_table'
-    DYNAMODB_ENDPOINT_URL = '<dynamodb endpoint url>'
+    DYNAMODB_ENDPOINT_URL = '<dynamodb endpoint url>' # optional  (e.g.: http://localhost:8000)
 
 That's it!
